@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Generar PDF con JavaScript y jsPDF</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+
+	<script>
+		function generarPDF() {
+			// Crear un nuevo documento PDF
+			var doc = new jsPDF();
+
+			/* Añadir una imagen al PDF
+			var imgData = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD...'; // Inserta aquí la imagen en formato base64
+			doc.addImage(imgData, 'JPEG', 10, 10, 100, 75);*/
+
+			// Añadir texto al PDF
+			doc.text("Este es mi PDF generado con JavaScript y jsPDF", 10, 100);
+
+			// Descargar el PDF
+			doc.save("./mi_pdf_generado_con_javascript.pdf");
+		}
+	</script>
+</head>
+<body>
+	<button onclick="generarPDF()">Generar PDF</button>
+</body>
+</html>
